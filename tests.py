@@ -18,8 +18,8 @@ def test_retrieve_a_character_with_index_for_all_lines():
 
 @pytest.skip
 def test_append_characters_to_each_other():
-    assert_that('abc\nxyz' | m[0] + m[-1], contains('ax', 'by', 'cz'))
-    assert_that('abc\ndef\nghi' | m[-1] + m[1], contains('gd', 'he', 'if'))
+    assert_that('abc\nxyz' | m[0] + m[-1], contains('ac', 'xz'))
+    assert_that('abc\ndef\nghi' | m[-1] + m[1], contains('cb', 'fe', 'ih'))
 
 @pytest.skip
 def test_select_range_of_characters_from_line():
