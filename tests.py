@@ -30,3 +30,10 @@ def test_select_range_of_characters_from_line():
 def test_select_range_of_characters_from_line_with_step():
     assert_that('thequickbrownfox\njumpsoverthelazy' | m[2:7:2],
             contains('euc', 'msv'))
+
+@pytest.skip
+def test_append_a_string_to_each_line():
+    assert_that('hello\nworld\nprogramming' | m + ' you sss',
+            contains('hello you sss', 'world you sss', 'programming you sss'))
+    assert_that('hello\nworld\nprogramming' | 'front ' + m,
+            contains('front hello', 'front world', 'front programming'))
